@@ -1,0 +1,23 @@
+{
+  "name": "serverless-stepfunction-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piercus/serverless-stepfunction-validator.git"
+  },
+  "author": "Pierre Colle <piercus@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piercus/serverless-stepfunction-validator/issues"
+  },
+  "homepage": "https://github.com/piercus/serverless-stepfunction-validator#readme",
+  "dependencies": {
+    "asl-validator": "^1.1.1",
+    "bluebird": "^3.5.2"
+  }
+}
