@@ -67,13 +67,14 @@ class ServerlessStepfunctionValidator {
     this.yamlParse().then(() => {
   		let allErrors = [];
   		for (const k of Object.keys(this.serverless.service.stepFunctions.stateMachines)) {
-  			const stateMachineDefinition = this.serverless.service.stepFunctions.stateMachines[k];
-        console.log(k)
+  			const stateMachineDefinition = this.serverless.service.stepFunctions.stateMachines[k].definition;
   			const {isValid, errors} = aslValidator(stateMachineDefinition);
   			allErrors = allErrors.concat(errors);
   		}
   		if (allErrors.length > 0) {
-        console.log(allErrors)
+        allErrors.forEach(err => {
+          this.serverless.cli.log(JSON.stringify(err, null, 2));
+        })
   			return Promise.reject(new Error('not valid asl'));
   		}
   		return Promise.resolve({});
